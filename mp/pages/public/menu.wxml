@@ -1,0 +1,22 @@
+<template name="menu">
+  <footer class="app-shell-footer">
+    <div class="fill-height box-flex align-center">
+      <a class="flex">
+        <i class="image-icons"></i>
+        <span>首页</span>
+      </a>
+      <a class="flex" onclick="">
+        <i class="image-icons"></i>
+        <span>分类</span>
+      </a>
+      <a class="flex" onclick="">
+        <i class="image-icons"></i>
+        <span>购物车</span>
+      </a>
+      <a class="flex" onclick="">
+        <i class="image-iconsr"></i>
+        <span>我的</span>
+      </a>
+    </div>
+  </footer>
+</template>

@@ -1,0 +1,159 @@
+<!--index.wxml-->
+<view class="app">
+  <view class="app-shell app-shell-bottom-navigation">
+    <view class="app-view-wrapper">
+      <view class="container fluid app-view app-view-with-footer">
+        <view class="header">
+          <view class="app-header-wrapper">
+            <view class="app-header-left">
+              <view class="app-header-item">
+                <i class="image-icons app-header-icon icon-logo"></i>
+              </view>
+            </view>
+            <view class="app-header-middle">
+              <view class="app-header-title">
+                <i class="image-icons app-header-icon icon-search"></i>搜索商品名称
+              </view>
+            </view>
+            <view class="app-header-right">
+              <view class="app-header-item">
+                <i class="image-icons app-header-icon icon-user"></i>
+                <!-- <view class="userinfo">
+          <image wx:if="{{!hasUserInfo && canIUse}}" class="userinfo-avatar" src="../../images/index.png"></image>
+          <image wx:else bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        </view> -->
+              </view>
+            </view>
+          </view>
+          <!--app-header-wrap end  -->
+          <!--nav  -->
+          <view class="nav">
+            <scroll-view scroll-x style="width:auto;overflow:hidden;">
+              <view class='nav-item'>
+                <span>11</span>
+              </view>
+              <view class='nav-item'>
+                <span>22</span>
+              </view>
+              <view class='nav-item'>
+                <span>33</span>
+              </view>
+              <view class='nav-item'>
+                <span>44</span>
+              </view>
+              <view class='nav-item'>
+                <span>55</span>
+              </view>
+              <view class='nav-item'>
+                <span>66</span>
+              </view>
+              <view class='nav-item'>
+                <span>77</span>
+              </view>
+              <view class='nav-item'>
+                <span>88</span>
+              </view>
+              <view class='nav-item'>
+                <span>99</span>
+              </view>
+              <view class='nav-item'>
+                <span>10</span>
+              </view>
+              <view class='nav-item'>
+                <span>11</span>
+              </view>
+              <view class='nav-item'>
+                <span>12</span>
+              </view>
+              <view class='nav-item'>
+                <span>13</span>
+              </view>
+            </scroll-view>
+          </view>
+          <!--nav end  -->
+        </view>
+        <!--header end  -->
+        <view class="page-wrap">
+          <view class='bodies'>
+            <scroll-view scroll-y class="component-list-main" bindscrolltolower="scrollToLower">
+              <view class='swiper-container'>
+                <swiper indicator-dots="true" autoplay="true" interval="3000" duration="500">
+                  <block wx:for="{{imgUrls}}">
+                    <swiper-item>
+                      <image src="{{item}}" class="slide-image"></image>
+                    </swiper-item>
+                  </block>
+                </swiper>
+              </view>
+              <!--swiper end  -->
+              <view class="divider-line"></view>
+              <view class="cells_auto_fill multi_cell" index="1">
+                <navigator class="exposure items" onclick="" style="width:372rpx;height:528rpx">
+                  <image src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/9c22d15531503b138d687c90541feb3a.jpg?thumb=1&w=358&h=508" style="width:372rpx;height:526rpx" lazy-load="true"></image>
+                </navigator>
+                <navigator class="exposure items" onclick="" style="width:372rpx;height:264rpx;left:376rpx;">
+                  <image src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/31f14fc3887efeefea79519468ca43fc.jpg?thumb=1&w=358&h=252" style="width:372rpx;height:260rpx;" lazy-load="true"></image>
+                </navigator>
+                <navigator class="exposure items" onclick="" style="width:372rpx;height:264rpx;left:376rpx;top:264rpx;">
+                  <image src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d0b062db51f83ac19562804ed607816b.jpg?thumb=1&w=358&h=252" style="width:372rpx;height:260rpx;" lazy-load="true"></image>
+                </navigator>
+              </view>
+              <view class="divider-line"></view>
+
+              <view class="cells_auto_fill" index="2">
+                <a class="exposure items" style="width: 748rpx; height: 292rpx;">
+                  <image src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/3a6469f65201e855b0f301accfcdeb42.jpg?thumb=1&w=720&h=280" style="width: 748rpx; height: 292rpx;"></image>
+                </a>
+              </view>
+
+              <view class="divider-line"></view>
+
+              <view class="list_two_type1 box-flex" index="3">
+                <navigator class="exposure item">
+                  <view class="img">
+                    <image class="big" src="//i8.mifile.cn/v1/a1/11a2b2b9-8deb-5177-ac51-eb9c07b03c31!360x360.webp" style="width:375rpx;height:375rpx"></image>
+                  </view>
+                  <view class="info">
+                    <view class="name">红米5</view>
+                    <view class="brief">12MP旗舰相机，骁龙处理器</view>
+                    <view>
+                      <view class="price">799
+                        <span>起</span>
+                      </view>
+                    </view>
+
+                  </view>
+                </navigator>
+                <navigator class="exposure item">
+                  <view class="img">
+                    <image class="big" src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5603273010ab9182a1527cfab5cd2a9e.jpg?thumb=1&w=360&h=360" style="width:375rpx;height:375rpx"></image>
+                  </view>
+                  <view class="info">
+                    <view class="name">小米5X 变焦双摄</view>
+                    <view class="brief">5.5"大屏轻薄全金属</view>
+                    <view>
+                      <view class="price">1299
+                        <span class="price old">
+                          <s>1499</s>
+                        </span>
+                      </view>
+                    </view>
+
+                  </view>
+                </navigator>
+              </view>
+
+            </scroll-view>
+            <!--component-list-main  -->
+          </view>
+          <!--bodies end  -->
+        </view>
+         <!--page-wrap end  -->
+      </view>
+     <!--container end -->
+    </view>
+    <!--app-view-wrapper end  -->
+  </view>
+  <!-- shell end -->
+</view>
+<!-- app end  -->
