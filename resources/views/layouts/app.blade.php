@@ -48,57 +48,62 @@
                     @guest
                         <li><a href="{{ route('login') }}">Login</a></li>
                         <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
+                    @else
 
-                            <li><a href="{{ route('companies.index') }}"><i class="fa fa-building"
-                                                                            aria-hidden="true"></i>My Companies</a></li>
-                            <li><a href="{{ route('projects.index') }}"><i class="fas fa-briefcase"></i>My Projects</a>
-                            </li>
-                            <li><a href="{{ route('tasks.index') }}"><i class="fas fa-tasks"></i>My Tasks</a></li>
+                        <li><a href="{{ route('companies.index') }}"><i class="fa fa-building"
+                                                                        aria-hidden="true"></i>My Companies</a></li>
+                        <li><a href="{{ route('projects.index') }}"><i class="fas fa-briefcase"></i>My Projects</a>
+                        </li>
+                        <li><a href="{{ route('tasks.index') }}"><i class="fas fa-tasks"></i>My Tasks</a></li>
 
-                            @if(Auth::user()->id == 11)
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-expanded="false" aria-haspopup="true" v-pre>
-                                        Admin <span class="caret"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ route('companies.index') }}"><i class="fa fa-building"
-                                                                                        aria-hidden="true"></i>All Companies</a></li>
-                                        <li><a href="{{ route('projects.index') }}"><i class="fas fa-briefcase"></i>All Projects</a>
-                                        </li>
-                                        <li><a href="{{ route('tasks.index') }}"><i class="fas fa-tasks"></i>All Tasks</a></li>
-                                        <li><a href="{{ route('users.index') }}"><i class="fas fa-user"></i>All Users</a></li>
-                                        <li><a href="{{ route('roles.index') }}"><i class="fas fa-envelope"></i>All Roles</a></li>
-
-                                    </ul>
-                                </li>
-                            @endif
-
+                        @if(Auth::user()->id == 11)
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    Admin <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                              style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+                                    <li><a href="{{ route('companies.index') }}"><i class="fa fa-building"
+                                                                                    aria-hidden="true"></i>All Companies</a>
                                     </li>
+                                    <li><a href="{{ route('projects.index') }}"><i class="fas fa-briefcase"></i>All
+                                            Projects</a>
+                                    </li>
+                                    <li><a href="{{ route('tasks.index') }}"><i class="fas fa-tasks"></i>All Tasks</a>
+                                    </li>
+                                    <li><a href="{{ route('users.index') }}"><i class="fas fa-user"></i>All Users</a>
+                                    </li>
+                                    <li><a href="{{ route('roles.index') }}"><i class="fas fa-envelope"></i>All
+                                            Roles</a></li>
+
                                 </ul>
                             </li>
+                        @endif
 
-                            @endguest
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false" aria-haspopup="true" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+
+                    @endguest
                 </ul>
             </div>
         </div>
@@ -116,6 +121,9 @@
 </div>
 
 <!-- Scripts -->
+<script src="{{ asset('js/polyfill.js') }}"></script>
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/vue.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"

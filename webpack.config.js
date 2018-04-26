@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
     filename: (getPath) => {
@@ -11,7 +12,6 @@ const extractSass = new ExtractTextPlugin({
 const config = {
     entry: {
         app: './resources/assets/js/app.js',
-        jquery: 'jquery',
         polyfill: 'babel-polyfill'
     },
     output:
@@ -54,11 +54,22 @@ const config = {
         ]
     },
     plugins: [
-        extractSass
+        extractSass,
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname,"resources/assets/js/jquery.js"),
+                to: path.resolve(__dirname,"public/js/jquery.js")
+            },
+            {
+                from: path.resolve(__dirname,"resources/assets/js/vue.js"),
+                to: path.resolve(__dirname,"public/js/vue.js")
+            }
+        ])
     ],
-    // externals: {
-    //     "vue": 'vue'
-    // },
+    externals: {
+        jquery: "jQuery",
+        vue: "Vue"
+    },
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.js'
