@@ -1,0 +1,9 @@
+{
+  "esversion": 6,
+  "node":true,
+  "globals": {
+    "node":true,
+    "jquery":true,
+    "module": true
+  }
+}

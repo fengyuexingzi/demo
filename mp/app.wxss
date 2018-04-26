@@ -1,0 +1,31 @@
+/**app.wxss**/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+::after, ::before {
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+}
+
+image[lazy-load] {
+  animation: opacity01 0.3s;
+}
+
+@keyframes opacity01 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+s, strike, del {
+  text-decoration: line-through;
+}
