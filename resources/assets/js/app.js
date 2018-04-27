@@ -1,8 +1,10 @@
+/* Components */
 import jQuery from 'jquery';
 import vue from 'vue';
 import Tasks from './components/Tasks.vue';
 
-import main from '../sass/app.scss';
+/* CSS */
+import '../sass/app.scss';
 
 window.$ = window.jQuery = jQuery;
 

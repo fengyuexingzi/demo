@@ -11,8 +11,9 @@ const extractSass = new ExtractTextPlugin({
 
 const config = {
     entry: {
+        polyfill: 'babel-polyfill',
         app: './resources/assets/js/app.js',
-        polyfill: 'babel-polyfill'
+        admin: './resources/assets/js/admin.js'
     },
     output:
         {
@@ -50,6 +51,19 @@ const config = {
                     // use style-loader in development
                     fallback: "style-loader"
                 })
+            },
+            {
+                test: /\.(woff|svg|ttf|eot)\??.*$/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        limit:8192,
+                        name: "[name].[ext]",
+                        publicPath: '../fonts',
+                        outputPath: "fonts",
+                        fallback: "file-loader"
+                    }
+                }
             }
         ]
     },
@@ -63,6 +77,14 @@ const config = {
             {
                 from: path.resolve(__dirname,"resources/assets/js/vue.js"),
                 to: path.resolve(__dirname,"public/js/vue.js")
+            },
+            {
+                from: path.resolve(__dirname,"node_modules/metismenu/dist/metismenu.css"),
+                to: path.resolve(__dirname,"public/css/metismenu.css")
+            },
+            {
+                from: path.resolve(__dirname,"node_modules/metismenu/dist/metismenu.js"),
+                to: path.resolve(__dirname,"public/js/metismenu.js")
             }
         ])
     ],

@@ -28,10 +28,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/projects', 'ProjectsController');
     Route::resource('/tasks', 'TasksController');
     Route::resource('/comments', 'CommentsController');
-    Route::resource('/users','UsersController');
-    Route::resource('/roles','RolesController');
+    Route::resource('/roles', 'RolesController');
 });
 
 Route::get('/admin', function () {
     return view('admin.index');
 });
+
+Route::resource('/users', 'UsersController');
