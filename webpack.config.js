@@ -90,7 +90,8 @@ const config = {
     ],
     externals: {
         jquery: "jQuery",
-        vue: "Vue"
+        vue: "Vue",
+        metismenu: 'jQuery.MetisMenu'
     },
     resolve: {
         alias: {

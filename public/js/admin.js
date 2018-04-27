@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _jquery = __webpack_require__(/*! jquery */ \"jquery\");\n\nvar _jquery2 = _interopRequireDefault(_jquery);\n\nvar _vue = __webpack_require__(/*! vue */ \"vue\");\n\nvar _vue2 = _interopRequireDefault(_vue);\n\nvar _Role = __webpack_require__(/*! ./components/admin/Role.vue */ \"./resources/assets/js/components/admin/Role.vue\");\n\nvar _Role2 = _interopRequireDefault(_Role);\n\n__webpack_require__(/*! ../sass/admin.scss */ \"./resources/assets/sass/admin.scss\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/* Components */\nwindow.$ = window.jQuery = _jquery2.default;\n\n/* CSS */\n\n\nvar app = new _vue2.default({\n    el: '#app',\n    components: { role: _Role2.default }\n});\n\n//# sourceURL=webpack:///./resources/assets/js/admin.js?");
+eval("\n\nvar _jquery = __webpack_require__(/*! jquery */ \"jquery\");\n\nvar _jquery2 = _interopRequireDefault(_jquery);\n\n__webpack_require__(/*! metismenu */ \"metismenu\");\n\nvar _vue = __webpack_require__(/*! vue */ \"vue\");\n\nvar _vue2 = _interopRequireDefault(_vue);\n\nvar _Role = __webpack_require__(/*! ./components/admin/Role.vue */ \"./resources/assets/js/components/admin/Role.vue\");\n\nvar _Role2 = _interopRequireDefault(_Role);\n\n__webpack_require__(/*! ../sass/admin.scss */ \"./resources/assets/sass/admin.scss\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nwindow.$ = window.jQuery = _jquery2.default;\n\n/* CSS */\n/* Components */\n\n\n$().ready(function () {\n    $(\"#side-menu\").metisMenu();\n\n    $(window).bind(\"load resize\", function () {\n        var topOffset = 50;\n        var width = (this.window.innerWidth > 0 ? this.window.innerWidth : this.screen.height) - 1;\n        if (width < 768) {\n            $(\"div.navbar-collapse\").addClass('collapse');\n            topOffset = 100;\n        } else {\n            $('div.navbar-collapse').removeClass('collapse');\n        }\n\n        var height = (this.window.innerHeight > 0 ? this.window.innerHeight : this.screen.height) - 1;\n        height = height - topOffset;\n        if (height < 1) height = 1;\n        if (height > topOffset) {\n            $(\"#page-wrapper\").css(\"min-height\", height + \"px\");\n        }\n    });\n\n    var url = window.location;\n    var element = $('ul.nav a').filter(function () {\n        return this.href == url;\n    }).addClass('active').parent();\n\n    while (true) {\n        if (element.is('li')) {\n            element = element.parent().addClass('in').parent();\n        } else {\n            break;\n        }\n    }\n});\n\nvar app = new _vue2.default({\n    el: '#app',\n    components: { role: _Role2.default }\n});\n\n//# sourceURL=webpack:///./resources/assets/js/admin.js?");
 
 /***/ }),
 
@@ -161,6 +161,17 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./re
 /***/ (function(module, exports) {
 
 eval("module.exports = jQuery;\n\n//# sourceURL=webpack:///external_%22jQuery%22?");
+
+/***/ }),
+
+/***/ "metismenu":
+/*!***********************************!*\
+  !*** external "jQuery.MetisMenu" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = jQuery.MetisMenu;\n\n//# sourceURL=webpack:///external_%22jQuery.MetisMenu%22?");
 
 /***/ }),
 
