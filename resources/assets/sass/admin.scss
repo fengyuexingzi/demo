@@ -2,16 +2,11 @@
 @import "variables";
 
 // Bootstrap
-//$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-//@import "~bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
-//// Font-Awesome
-//$fa-font-path: "~font-awesome/fonts";
-//@import "~font-awesome/scss/font-awesome";
-
-//
+// Font-Awesome
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 
 // Admin
 @import "mixins";
